@@ -1,3 +1,3 @@
-﻿using RandomNumbers.Controller
+﻿using RandomNumbers;
 
 Controller.GetRandomNumbers();
