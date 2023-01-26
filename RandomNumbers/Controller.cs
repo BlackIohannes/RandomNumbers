@@ -2,21 +2,18 @@ namespace RandomNumbers;
 
 public class Controller
 {
-    public static void GetRandomNumbers(){
-        int[] numbers = Enumerable.Range(1, 27).ToArray();
-        var random = new Random();
-
+    public int GetRandomNumbers(int min, int max)
+    {
+        int[] numbers = Enumerable.Range(min, max).ToArray();
+        Random rand = new Random();
         for (int i = 0; i < numbers.Length; i++)
         {
-            int randomIndex = i + random.Next(numbers.Length - i);
-            int temp = numbers[randomIndex];
-            numbers[randomIndex] = numbers[i];
-            numbers[i] = temp;
+            int randomIndex = rand.Next(i, numbers.Length);
+            int temp = numbers[i];
+            numbers[i] = numbers[randomIndex];
+            numbers[randomIndex] = temp;
         }
 
-        foreach (int number in numbers)
-        {
-            Console.WriteLine(number);
-        }
+        return numbers[0];
     }
 }

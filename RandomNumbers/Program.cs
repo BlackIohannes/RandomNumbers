@@ -1,3 +1,4 @@
 ﻿using RandomNumbers;
 
-Controller.GetRandomNumbers();
+var controller = new Controller();
+Console.WriteLine($"\nResult --> {controller.GetRandomNumbers(1, 27)}");
